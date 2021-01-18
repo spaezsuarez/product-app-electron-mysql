@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <title>Product app</title>
+</head>
+<body>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 p-4 my-auto">
+                <!-- col-md-6 clases para centrarlo en la pantalla -->
+                <!-- my-auto centrarlo verticalmente -->
+                <form class="card card-body" id="product-form">
+                    <div class="form-group"><!-- form-group clase para separa inputs -->
+                        <input type="text" id="name" placeholder="Product name" class="form-control" autofocus>
+                    </div>
+
+                    <div class="form-group"><!-- form-group clase para separa inputs -->
+                        <input type="number" id="price" placeholder="Product price" class="form-control" step="any">
+                    </div>
+
+                    <div class="form-group"><!-- form-group clase para separa inputs -->
+                        <textarea id="description" rows="3" placeholder="Product description" class="form-control"></textarea>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Guardar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./app.js"></script>
+</body>
+</html>
