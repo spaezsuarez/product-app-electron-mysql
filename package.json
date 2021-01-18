@@ -10,7 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "electron": "^11.2.0",
+    "electron-alert": "^0.1.11",
     "electron-reload": "^1.5.0",
-    "promise-mysql": "^5.0.2"
+    "mysql": "^2.18.1"
   }
 }

@@ -1,21 +1,22 @@
-const mysql = require("promise-mysql");
+const mysql = require('mysql');
 const keys = require("../private/keys");
 
-let pool;
 
-const init_db = () => {
-    pool = mysql.createPool(keys).then((data) => {
-        console.log("Conexion a la base de datos exitosa");
-      });
-}
+const { promisify } = require('util');
 
-const getConnection = () => {
-  return pool;
-};
+const pool = mysql.createPool(keys);
 
+pool.getConnection((error,connection) => {
 
+    if(connection){
+        connection.release();
+        return
+    }else{
+        throw new Error(error);
+    }
 
-module.exports = {
-  init_db,
-  getConnection
-};
+});
+
+pool.query = promisify(pool.query);
+
+module.exports = pool;
