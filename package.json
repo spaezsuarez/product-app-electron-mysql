@@ -1,0 +1,16 @@
+{
+  "name": "electron-mysql-crud",
+  "version": "1.0.0",
+  "description": "Ejemplo de un crud utlizando electron y msyql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergio David Paez Suarez",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^11.2.0",
+    "electron-reload": "^1.5.0",
+    "mysql": "^2.18.1"
+  }
+}
