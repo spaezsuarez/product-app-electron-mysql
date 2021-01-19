@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="./style.css" />
-    <title>Product app</title>
+    <title>Product App</title>
 </head>
 <body>
     <header>
@@ -21,26 +22,34 @@
 
     <main class="container-fluid">
         <div class="row">
-            <div class="col-md-6 p-4 my-auto">
+            <div class="col-md-6 p-4 my-auto own-block">
                 <!-- col-md-6 clases para centrarlo en la pantalla -->
                 <!-- my-auto centrarlo verticalmente -->
                 <form class="card card-body" id="product-form">
                     <div class="form-group"><!-- form-group clase para separa inputs -->
-                        <input type="text" id="name" placeholder="Product name" class="form-control" autofocus>
+                        <input type="text" id="name" placeholder="Product name" class="form-control bg-secondary own-input" autofocus>
                     </div>
 
                     <div class="form-group"><!-- form-group clase para separa inputs -->
-                        <input type="number" id="price" placeholder="Product price" class="form-control" step="any">
+                        <input type="number" id="price" placeholder="Product price" class="form-control bg-secondary own-input" step="any">
                     </div>
 
                     <div class="form-group"><!-- form-group clase para separa inputs -->
-                        <textarea id="description" rows="3" placeholder="Product description" class="form-control"></textarea>
+                        <textarea id="description" rows="4" placeholder="Product description" class="form-control bg-secondary own-input"></textarea>
                     </div>
 
-                    <button class="btn btn-primary" type="submit">Guardar</button>
+                    <button class="btn btn-success" type="submit">Guardar</button>
                 </form>
             </div>
+
+            <!--Seccion donde se generaran los productos creados mediante javascript-->
+            <div class="col-md-6">
+                <div id="products">
+                  
+                </div>
+            </div>
         </div>
+        
     </main>
     
     <script src="./app.js"></script>
