@@ -1,13 +1,5 @@
 const getIdDB = (table) => {
     switch (table) {
-        case 'Cliente':
-            return 'idCliente';
-        case 'Cuenta':
-            return 'idCuenta';
-        case 'Operacion':
-            return 'idOperacion';
-        case 'TarjetaDebito':
-            return 'idTarjeta';
         default:
             return 'id';
     }
