@@ -14,6 +14,9 @@ const createWindow = () => {
             nodeIntegration: true,
             enableRemoteModule: true,
         },
+        icon:'src/view/assets/icon.png',
+        resizable:true,
+        center:true
     });
     window.loadFile('src/view/index.html');
 }
