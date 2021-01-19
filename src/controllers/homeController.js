@@ -31,8 +31,19 @@ const getProducts = () => {
    });
 }
 
+const deleteItem = (id) => {
+    return new Promise((resolve,reject) => {
+        dao.delete('product',id).then((res) => {
+            resolve(res);
+        }).catch((err) => {
+            reject(err);
+        });
+    });
+}
+
 
 module.exports = {
     addProduct,
-    getProducts
+    getProducts,
+    deleteItem
 }
