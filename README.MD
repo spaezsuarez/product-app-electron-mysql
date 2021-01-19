@@ -48,3 +48,7 @@ Una vez clonado el proyecto se debe entrar a la carpeta principal y ejecutar los
 
 - `npm install`
 - `npm run start:dev`
+
+## Vistas
+
+- ![Menu](doc/Main.png)
