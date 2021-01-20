@@ -3,3 +3,10 @@
     padding-top:10px;
     padding-bottom: 0;
 }
+
+.own-img{
+    /*height: 250px;*/
+    animation:rotateIn;
+    animation-duration: 2400ms;;
+    animation-iteration-count: infinite;
+}
