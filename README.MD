@@ -52,3 +52,5 @@ Una vez clonado el proyecto se debe entrar a la carpeta principal y ejecutar los
 ## Vistas
 
 - ![Menu](doc/Main.png)
+
+- ![About](doc/About.png)
