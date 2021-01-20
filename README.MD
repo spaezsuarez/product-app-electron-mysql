@@ -1,6 +1,6 @@
 # Crud Electron-Mysql
 
-Ejemplo de un crud utlizando electron y msyql
+Ejemplo de una aplicación de escritorio utilizando JavaScript mediante electron y manejando un crud utilzando mysql
 
 ## Autor:
 - Sergio David Paez Suarez 
