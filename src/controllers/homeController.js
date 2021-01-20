@@ -3,6 +3,14 @@ const { Notification } = require('electron');
 
 let dao = new Dao();
 
+const getErrorMesssage = (err) => {
+    new Notification({
+        title:'Ha ocurrido un error',
+        body:`Codigo de error: ${err}`,
+        sound: 'default'
+    }).show();
+}
+
 const addProduct = (table,values) => {
     dao.create(table,values).then(() => {
         new Notification({
@@ -67,5 +75,6 @@ module.exports = {
     getProducts,
     getProduct,
     deleteItem,
-    updateItem
+    updateItem,
+    getErrorMesssage
 }
