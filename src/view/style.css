@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.own-nav{
+    height: 60px;
+    padding-top:10px;
+    padding-bottom: 0;
+}
+
+.own-input{
+    color:white;
+}
+
+.own-input:focus{
+    color:white;
+}
+
+.own-input:hover{
+    cursor: text;
+}
+
+#products{
+    overflow: auto;
+    padding: 2px;
+    height: 100vh;
+}
