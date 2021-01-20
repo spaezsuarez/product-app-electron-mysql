@@ -31,9 +31,29 @@ const getProducts = () => {
    });
 }
 
+const getProduct = (id) => {
+    return new Promise((resolve,reject) => {
+        dao.get('product',id).then((res) => {
+            resolve(res);
+        }).catch((err) => {
+            reject(err);
+        });
+    });
+}
+
 const deleteItem = (id) => {
     return new Promise((resolve,reject) => {
         dao.delete('product',id).then((res) => {
+            resolve(res);
+        }).catch((err) => {
+            reject(err);
+        });
+    });
+}
+
+const updateItem = (id,body) => {
+    return new Promise((resolve,reject) => {
+        dao.update('product',body,id).then((res) => {
             resolve(res);
         }).catch((err) => {
             reject(err);
@@ -45,5 +65,7 @@ const deleteItem = (id) => {
 module.exports = {
     addProduct,
     getProducts,
-    deleteItem
+    getProduct,
+    deleteItem,
+    updateItem
 }
