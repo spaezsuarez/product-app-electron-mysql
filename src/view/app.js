@@ -22,20 +22,20 @@ let editProduct = {
 //
 
 const deleteProduct = (id) => {
-    homeController.deleteItem(id).then(() => {
-        initProducts();
-    }).catch((err) => {
-        new Notification({
-            title:'Ha ocurrido un error',
-            body:`Codigo de error: ${err.sqlState}`,
-            sound: 'default'
-        }).show();
-    })
+
+    if(window.confirm("¿Seguro que desea eliminar el producto?")){
+        homeController.deleteItem(id).then(() => {
+            initProducts();
+        }).catch((err) => {
+            homeController.getErrorMesssage(err.sqlState);
+        })
+    }
 }
 
 const updateProduct = (id) => {
-    updating = true;
-    homeController.getProduct(id).then((res) => {
+    if (window.confirm("¿Seguro que desea modificar los datos?")) {
+        updating = true;
+        homeController.getProduct(id).then((res) => {
         editProduct.nombre = res[0].nombre;
         editProduct.id = id;
         editProduct.precio = res[0].precio;
@@ -47,12 +47,10 @@ const updateProduct = (id) => {
         form.focus();
 
     }).catch((err) => {
-        new Notification({
-            title:'Ha ocurrido un error',
-            body:`Codigo de error: ${err.sqlState}`,
-            sound: 'default'
-        }).show();
+        homeController.getErrorMesssage(err.sqlState);
     })
+    }
+
 
 }
 
@@ -88,12 +86,7 @@ const initProducts = () => {
             renderProducts(res);
         }
     }).catch((err) => {
-        new Notification({
-            title:'Ha ocurrido un error',
-            body:`Codigo de error: ${err.sqlState}`,
-            sound: 'default'
-        }).show();
-
+        homeController.getErrorMesssage(err.sqlState);
     });
 }
 
@@ -115,10 +108,13 @@ form.addEventListener('submit', (event) => {
         homeController.updateItem(editProduct.id,editProduct).then(() => {
             initProducts();
             updating = false;
+            inputName.value = '';
+            inputPrice.value = '';
+            textArea.value = '';
+            form.focus();
         }).catch((err) => {
-            console.table(err);
+            alert(`Ha ocurrido un error codigo ${err.sqlState} `);
         });
-
     }
     
 
