@@ -4,15 +4,49 @@
   "description": "Ejemplo de un crud utlizando electron y msyql",
   "main": "src/index.js",
   "scripts": {
-    "start:dev": "electron ."
+    "start:dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "author": "Sergio David Paez Suarez",
+  "author": {
+    "name": "Sergio David Paez Suarez",
+    "email": "spaezsuarez@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spaezsuarez/product-app-electron-mysql"
+  },
   "license": "MIT",
   "dependencies": {
-    "electron": "^11.2.0",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
-    "electron-reload": "^1.5.0"
+    "electron": "^11.2.0",
+    "electron-builder": "^22.9.1"
+  },
+  "build": {
+    "appId": "Product.app",
+    "asar": true,
+    "productName": "Product App",
+    "copyright": "Copyright © 2021 Sergio David Paez Suarez",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "pacman"
+      ],
+      "icon": "build/icon.png"
+    },
+    "win": {
+      "target": [
+        "NSIS",
+        "portable",
+        "msi"
+      ],
+      "icon": "build/icon.ico"
+    }
   }
 }
