@@ -2,10 +2,6 @@ const { BrowserWindow } = require('electron'); //Clase que me permite mostrar un
 
 let window;
 
-const createProduct = (product) => {
-    console.log(product);
-}
-
 const createWindow = () => {
     window = new BrowserWindow({
         width:800,
